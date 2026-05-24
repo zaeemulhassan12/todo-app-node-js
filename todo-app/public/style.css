@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #252542);
+    min-height: 100vh;
+    padding: 40px;
+    color: white;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 38px;
+    letter-spacing: 1px;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+input {
+    flex: 1;
+}
+
+input,
+select,
+button {
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+input,
+select {
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+input::placeholder {
+    color: #ddd;
+}
+
+button {
+    background: #6c63ff;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #5848ff;
+    transform: translateY(-2px);
+}
+
+.todo-list {
+    list-style: none;
+}
+
+.todo-item {
+    background: rgba(255,255,255,0.12);
+    padding: 18px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.todo-item:hover {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.18);
+}
+
+.todo-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.priority {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.low {
+    background: #00c853;
+}
+
+.medium {
+    background: #ffab00;
+}
+
+.high {
+    background: #ff1744;
+}
+
+.actions {
+    margin-top: 15px;
+}
+
+.actions a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-right: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.complete-btn {
+    background: #00c853;
+}
+
+.edit-btn {
+    background: #2962ff;
+}
+
+.delete-btn {
+    background: #d50000;
+}
+
+.actions a:hover {
+    opacity: 0.8;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: #6c63ff;
+    padding: 10px 16px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
