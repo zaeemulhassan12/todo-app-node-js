@@ -10,10 +10,6 @@ app.use(express.static("public"));
 
 app.set("view engine", "ejs");
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
-
 const db = new sqlite3.Database("./database/todo.db");
 
 db.run(`
@@ -92,12 +88,13 @@ app.post("/update/:id", (req, res) => {
 });
 
 
-
 app.get("/complete/:id", (req, res) => {
+
     db.run(
         "UPDATE todos SET completed = 1 WHERE id = ?",
         [req.params.id],
         (err) => {
+
             if (err) {
                 console.log(err);
             }
@@ -105,4 +102,9 @@ app.get("/complete/:id", (req, res) => {
             res.redirect("/");
         }
     );
+
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
