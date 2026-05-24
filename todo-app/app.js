@@ -74,3 +74,35 @@ app.get("/edit/:id", (req, res) => {
         }
     );
 });
+
+app.post("/update/:id", (req, res) => {
+    const { task, priority } = req.body;
+
+    db.run(
+        "UPDATE todos SET task=?, priority=? WHERE id=?",
+        [task, priority, req.params.id],
+        (err) => {
+            if (err) {
+                console.log(err);
+            }
+
+            res.redirect("/");
+        }
+    );
+});
+
+
+
+app.get("/complete/:id", (req, res) => {
+    db.run(
+        "UPDATE todos SET completed = 1 WHERE id = ?",
+        [req.params.id],
+        (err) => {
+            if (err) {
+                console.log(err);
+            }
+
+            res.redirect("/");
+        }
+    );
+});
